@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17365d" />
+  <meta name="description" content="نظام إدارة جدول معامل وإشرافات قسم علم الحيوان" />
+  <title>نظام إدارة جدول معامل قسم علم الحيوان</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="topbar no-print">
+    <div class="brand">
+      <div class="brand-mark">ع</div>
+      <div>
+        <h1 id="appTitle">نظام إدارة جدول معامل قسم علم الحيوان</h1>
+        <p id="appSubtitle">كلية العلوم — الفصل الدراسي الأول 2026/2027</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span id="connectionBadge" class="badge badge-muted">جاري التحميل…</span>
+      <span id="saveBadge" class="badge badge-ok">محفوظ</span>
+      <button id="loginBtn" class="btn btn-ghost" type="button">تسجيل الدخول</button>
+      <button id="saveBtn" class="btn btn-primary" type="button">حفظ</button>
+    </div>
+  </header>
+
+  <nav class="tabs no-print" aria-label="التنقل الرئيسي">
+    <button class="tab active" data-view="final">الجدول النهائي</button>
+    <button class="tab" data-view="assistants">توزيع الهيئة المعاونة</button>
+    <button class="tab" data-view="supervision">توزيع هيئة الإشراف</button>
+    <button class="tab" data-view="members">جداول الأعضاء والساعات</button>
+    <button class="tab" data-view="conflicts">التعارضات</button>
+    <button class="tab" data-view="admin">إدارة المواد والأعضاء والنصاب</button>
+    <button class="tab" data-view="history">سجل التعديلات</button>
+    <button class="tab" data-view="settings">الإعدادات والنسخ الاحتياطي</button>
+  </nav>
+
+  <main id="app" class="app-shell" aria-live="polite"></main>
+
+  <dialog id="loginDialog" class="dialog">
+    <form id="loginForm" method="dialog" class="dialog-card">
+      <div class="dialog-head">
+        <h2>تسجيل دخول المسؤول</h2>
+        <button type="button" class="icon-btn" data-close-dialog aria-label="إغلاق">×</button>
+      </div>
+      <p class="muted">الدخول مطلوب فقط للتعديل والحفظ على قاعدة البيانات. العرض والطباعة يظلان متاحين.</p>
+      <label>البريد الإلكتروني<input id="loginEmail" type="email" autocomplete="username" required /></label>
+      <label>كلمة المرور<input id="loginPassword" type="password" autocomplete="current-password" required /></label>
+      <div id="loginMessage" class="form-message"></div>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" data-close-dialog>إلغاء</button>
+        <button type="submit" class="btn btn-primary">دخول</button>
+      </div>
+    </form>
+  </dialog>
+
+  <input id="backupFile" type="file" accept="application/json,.json" hidden />
+
+  <script src="./config.js"></script>
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

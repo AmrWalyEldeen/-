@@ -1,0 +1,13 @@
+{
+  "name": "نظام إدارة جدول معامل قسم علم الحيوان",
+  "short_name": "جدول المعامل",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#17365d",
+  "icons": [
+    {"src":"./assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
